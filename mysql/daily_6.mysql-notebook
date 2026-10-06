@@ -30,7 +30,7 @@
                 "lineNumber": 23,
                 "column": 1
             },
-            "firstPositionDeltaTop": -15
+            "firstPositionDeltaTop": -9
         },
         "contributionsState": {
             "editor.contrib.folding": {},
@@ -77,7 +77,7 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "7bf5eaac-06e9-4371-b49e-9cc83df025cc"
+                        "005ef792-d371-4abe-f4fa-0cc62de0459a"
                     ]
                 },
                 "currentHeight": 36,
@@ -96,8 +96,8 @@
             },
             "data": [
                 {
-                    "tabId": "284b4f8b-124b-4e36-d1bd-942d19fabfdc",
-                    "resultId": "7bf5eaac-06e9-4371-b49e-9cc83df025cc",
+                    "tabId": "6244bb96-5b44-4673-d6c2-0ff001ec017e",
+                    "resultId": "005ef792-d371-4abe-f4fa-0cc62de0459a",
                     "rows": [
                         {
                             "0": "information_schema"
@@ -187,7 +187,7 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "6e055db1-fcb9-4941-9757-2afedcf5c9e5"
+                        "88582df0-f1a1-400d-d58d-f421b7274d2d"
                     ]
                 },
                 "currentHeight": 36,
@@ -206,8 +206,8 @@
             },
             "data": [
                 {
-                    "tabId": "284b4f8b-124b-4e36-d1bd-942d19fabfdc",
-                    "resultId": "6e055db1-fcb9-4941-9757-2afedcf5c9e5",
+                    "tabId": "6244bb96-5b44-4673-d6c2-0ff001ec017e",
+                    "resultId": "88582df0-f1a1-400d-d58d-f421b7274d2d",
                     "rows": [
                         {
                             "0": "clinical_data"
@@ -367,7 +367,7 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "4cd22cc2-7928-4d32-a25c-f5b78c7cff59"
+                        "dc16f528-1cd9-45e4-f9ac-47b000ebc2fe"
                     ]
                 },
                 "currentHeight": 36,
@@ -386,8 +386,8 @@
             },
             "data": [
                 {
-                    "tabId": "284b4f8b-124b-4e36-d1bd-942d19fabfdc",
-                    "resultId": "4cd22cc2-7928-4d32-a25c-f5b78c7cff59",
+                    "tabId": "6244bb96-5b44-4673-d6c2-0ff001ec017e",
+                    "resultId": "dc16f528-1cd9-45e4-f9ac-47b000ebc2fe",
                     "rows": [
                         {
                             "0": "record_date",
@@ -529,7 +529,7 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "59a2232c-d8a3-405d-d1d5-cb7a09def6d1"
+                        "772613c0-da57-4c12-9873-270d67eaa21a"
                     ]
                 },
                 "currentHeight": 173.96875,
@@ -548,8 +548,8 @@
             },
             "data": [
                 {
-                    "tabId": "284b4f8b-124b-4e36-d1bd-942d19fabfdc",
-                    "resultId": "59a2232c-d8a3-405d-d1d5-cb7a09def6d1",
+                    "tabId": "6244bb96-5b44-4673-d6c2-0ff001ec017e",
+                    "resultId": "772613c0-da57-4c12-9873-270d67eaa21a",
                     "rows": [
                         {
                             "0": "2026-10-01",
@@ -627,7 +627,7 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "3e8d32b9-0b03-441d-833b-d3315b665f8d"
+                        "ca47c7cf-054c-49b0-9fdf-12804653d3d7"
                     ]
                 },
                 "currentHeight": 173.96875,
@@ -646,8 +646,8 @@
             },
             "data": [
                 {
-                    "tabId": "284b4f8b-124b-4e36-d1bd-942d19fabfdc",
-                    "resultId": "3e8d32b9-0b03-441d-833b-d3315b665f8d",
+                    "tabId": "6244bb96-5b44-4673-d6c2-0ff001ec017e",
+                    "resultId": "ca47c7cf-054c-49b0-9fdf-12804653d3d7",
                     "rows": [
                         {
                             "0": "2026-10-04",
@@ -749,7 +749,7 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "aa12ce5f-c549-47b0-d9f1-7087ce45a290"
+                        "bb9a82fd-dc78-450c-e8a5-34d2dd26bcb9"
                     ]
                 },
                 "currentHeight": 176.796875,
@@ -768,8 +768,8 @@
             },
             "data": [
                 {
-                    "tabId": "284b4f8b-124b-4e36-d1bd-942d19fabfdc",
-                    "resultId": "aa12ce5f-c549-47b0-d9f1-7087ce45a290",
+                    "tabId": "6244bb96-5b44-4673-d6c2-0ff001ec017e",
+                    "resultId": "bb9a82fd-dc78-450c-e8a5-34d2dd26bcb9",
                     "rows": [
                         {
                             "0": "2026-10-01",
@@ -896,7 +896,7 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "b61381f3-e7e3-41fa-d101-3c114cc4215e"
+                        "2e3013e9-adf7-494e-a0fe-460b8590fc3f"
                     ]
                 },
                 "currentHeight": 85.96875,
@@ -915,8 +915,8 @@
             },
             "data": [
                 {
-                    "tabId": "284b4f8b-124b-4e36-d1bd-942d19fabfdc",
-                    "resultId": "b61381f3-e7e3-41fa-d101-3c114cc4215e",
+                    "tabId": "6244bb96-5b44-4673-d6c2-0ff001ec017e",
+                    "resultId": "2e3013e9-adf7-494e-a0fe-460b8590fc3f",
                     "rows": [
                         {
                             "0": "160"
@@ -967,7 +967,7 @@
                 "result": {
                     "type": "resultIds",
                     "list": [
-                        "fe2398eb-b9a8-4e27-d953-786b40eb88ae"
+                        "89bb531c-ab13-48f9-ae19-5a37b588b4f3"
                     ]
                 },
                 "currentHeight": 85.96875,
@@ -986,8 +986,8 @@
             },
             "data": [
                 {
-                    "tabId": "284b4f8b-124b-4e36-d1bd-942d19fabfdc",
-                    "resultId": "fe2398eb-b9a8-4e27-d953-786b40eb88ae",
+                    "tabId": "6244bb96-5b44-4673-d6c2-0ff001ec017e",
+                    "resultId": "89bb531c-ab13-48f9-ae19-5a37b588b4f3",
                     "rows": [
                         {
                             "0": "52.5000"
