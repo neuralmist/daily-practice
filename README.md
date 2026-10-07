@@ -1,2 +1,3 @@
 # daily-practice
-daily-practice
+sql
+mysql
