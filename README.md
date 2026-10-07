@@ -1,3 +1,3 @@
 # daily-practice
-sql
-mysql
+1.mysql
+2.python
