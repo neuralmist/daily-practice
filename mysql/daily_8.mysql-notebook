@@ -1,0 +1,979 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook",
+    "content": "\\about\nshow DATABASES;\nuse internship_prep;\ncreate table clinical_trail_wide(\npatient_id int,\ntreatment varchar(20),\nweek_1_bp INT,\nweek_2_bp INT,\nweek_3_bp INT\n);\nINSERT into clinical_trail_wide(patient_id,treatment,week_1_bp,week_2_bp,week_3_bp) VALUES\n(501,'Drug_1',140,135,120),\n(502,'Placebo',150,148,145),\n(503,\"Drug_A\",135,130,128);\nSELECT*from clinical_trail_wide;\nDESCRIBE clinical_trail_wide;\nSELECT patient_id,treatment,\"week_1\" as measurement_week,week_1_bp as  blood_pressure\nFROM clinical_trail_wide\nUNION ALL\nSELECT patient_id,treatment,\"week_2\" as measurement_week,week_2_bp as blood_pressure \nfrom clinical_trail_wide\nUNION ALL\nSELECT patient_id,treatment,\"week_3\" as measurement_week,week_3_bp as blood_pressure\nFROM clinical_trail_wide\n;\n#order by\n\nSELECT patient_id,treatment,\"week_1\" as measurement_week,week_1_bp as  blood_pressure\nFROM clinical_trail_wide\nUNION ALL\nSELECT patient_id,treatment,\"week_2\" as measurement_week,week_2_bp as blood_pressure \nfrom clinical_trail_wide\nUNION ALL\nSELECT patient_id,treatment,\"week_3\" as measurement_week,week_3_bp as blood_pressure\nFROM clinical_trail_wide\nORDER BY patient_id,measurement_week;\n\n",
+    "options": {
+        "tabSize": 4,
+        "indentSize": 4,
+        "insertSpaces": true,
+        "defaultEOL": "LF",
+        "trimAutoWhitespace": true
+    },
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": false,
+                "selectionStart": {
+                    "lineNumber": 38,
+                    "column": 1
+                },
+                "position": {
+                    "lineNumber": 38,
+                    "column": 1
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 26,
+                "column": 1
+            },
+            "firstPositionDeltaTop": 43
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": false
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 1,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "content": "Welcome to the MySQL Shell - DB Notebook.\n\nPress Cmd+Enter to execute the code block.\n\nExecute \\sql to switch to SQL, \\js to JavaScript and \\ts to TypeScript mode.\nExecute \\help or \\? for help;",
+                            "language": "ansi"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 6
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 2,
+                "end": 2,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "3a15f823-d72f-4d92-804f-80fb40f6dc25"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 15
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a18efeef-496a-479d-a53f-6fe5f5c06963",
+                    "resultId": "3a15f823-d72f-4d92-804f-80fb40f6dc25",
+                    "rows": [
+                        {
+                            "0": "information_schema"
+                        },
+                        {
+                            "0": "internship_prep"
+                        },
+                        {
+                            "0": "mysql"
+                        },
+                        {
+                            "0": "performance_schema"
+                        },
+                        {
+                            "0": "sys"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Database",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 5 records retrieved in 1.806ms"
+                    },
+                    "totalRowCount": 5,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "show DATABASES",
+                    "updatable": false
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 3,
+                "end": 3,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "e260fb46-5846-4783-a93c-c0248f71834b",
+                            "content": "OK, 0 records retrieved in 3.436ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 20
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 4,
+                "end": 10,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "615d100f-9e7b-4123-95a6-3c9e5e8000d0",
+                            "content": "OK, 0 records retrieved in 27.99ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 119
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 11,
+                "end": 14,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "082b48d0-272a-4c73-de8e-e2b4de0db729",
+                            "content": "OK, 3 rows affected in 6.428ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 175
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 15,
+                "end": 15,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "8b057d0a-3b60-49f8-cc46-1c788bcec4e7"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 32
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a18efeef-496a-479d-a53f-6fe5f5c06963",
+                    "resultId": "8b057d0a-3b60-49f8-cc46-1c788bcec4e7",
+                    "rows": [
+                        {
+                            "0": 501,
+                            "1": "Drug_1",
+                            "2": 140,
+                            "3": 135,
+                            "4": 120
+                        },
+                        {
+                            "0": 502,
+                            "1": "Placebo",
+                            "2": 150,
+                            "3": 148,
+                            "4": 145
+                        },
+                        {
+                            "0": 503,
+                            "1": "Drug_A",
+                            "2": 135,
+                            "3": 130,
+                            "4": 128
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "patient_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "treatment",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "week_1_bp",
+                            "field": "2",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "week_2_bp",
+                            "field": "3",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "week_3_bp",
+                            "field": "4",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 3 records retrieved in 0.339ms"
+                    },
+                    "totalRowCount": 3,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT*from clinical_trail_wide",
+                    "updatable": false,
+                    "fullTableName": "clinical_trail_wide"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 16,
+                "end": 16,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "ed5dcc57-c12d-43b5-d909-7983186bb57a"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 29
+                        },
+                        "contentStart": 1,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a18efeef-496a-479d-a53f-6fe5f5c06963",
+                    "resultId": "ed5dcc57-c12d-43b5-d909-7983186bb57a",
+                    "rows": [
+                        {
+                            "0": "patient_id",
+                            "1": "int",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "treatment",
+                            "1": "varchar(20)",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "week_1_bp",
+                            "1": "int",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "week_2_bp",
+                            "1": "int",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        },
+                        {
+                            "0": "week_3_bp",
+                            "1": "int",
+                            "2": "YES",
+                            "3": "",
+                            "4": null,
+                            "5": ""
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "Field",
+                            "field": "0",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Type",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Null",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Key",
+                            "field": "3",
+                            "dataType": {
+                                "type": 43,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Default",
+                            "field": "4",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "Extra",
+                            "field": "5",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 5 records retrieved in 2.423ms"
+                    },
+                    "totalRowCount": 5,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "DESCRIBE clinical_trail_wide",
+                    "updatable": false
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 17,
+                "end": 25,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "c1a92f85-1601-4614-e158-f42f8793eb16"
+                    ]
+                },
+                "currentHeight": 261.96875,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 353
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a18efeef-496a-479d-a53f-6fe5f5c06963",
+                    "resultId": "c1a92f85-1601-4614-e158-f42f8793eb16",
+                    "rows": [
+                        {
+                            "0": 501,
+                            "1": "Drug_1",
+                            "2": "week_1",
+                            "3": 140
+                        },
+                        {
+                            "0": 502,
+                            "1": "Placebo",
+                            "2": "week_1",
+                            "3": 150
+                        },
+                        {
+                            "0": 503,
+                            "1": "Drug_A",
+                            "2": "week_1",
+                            "3": 135
+                        },
+                        {
+                            "0": 501,
+                            "1": "Drug_1",
+                            "2": "week_2",
+                            "3": 135
+                        },
+                        {
+                            "0": 502,
+                            "1": "Placebo",
+                            "2": "week_2",
+                            "3": 148
+                        },
+                        {
+                            "0": 503,
+                            "1": "Drug_A",
+                            "2": "week_2",
+                            "3": 130
+                        },
+                        {
+                            "0": 501,
+                            "1": "Drug_1",
+                            "2": "week_3",
+                            "3": 120
+                        },
+                        {
+                            "0": 502,
+                            "1": "Placebo",
+                            "2": "week_3",
+                            "3": 145
+                        },
+                        {
+                            "0": 503,
+                            "1": "Drug_A",
+                            "2": "week_3",
+                            "3": 128
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "patient_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "treatment",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "measurement_week",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "blood_pressure",
+                            "field": "3",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 9 records retrieved in 0.808ms"
+                    },
+                    "totalRowCount": 9,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT patient_id,treatment,\"week_1\" as measurement_week,week_1_bp as  blood_pressure\nFROM clinical_trail_wide\nUNION ALL\nSELECT patient_id,treatment,\"week_2\" as measurement_week,week_2_bp as blood_pressure \nfrom clinical_trail_wide\nUNION ALL\nSELECT patient_id,treatment,\"week_3\" as measurement_week,week_3_bp as blood_pressure\nFROM clinical_trail_wide\n",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 26,
+                "end": 37,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "8213cbba-dfe1-4135-a031-fdf5f722f02f"
+                    ]
+                },
+                "currentHeight": 261.96875,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 400
+                        },
+                        "contentStart": 11,
+                        "state": 0
+                    },
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 400,
+                            "length": 1
+                        },
+                        "contentStart": 399,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a18efeef-496a-479d-a53f-6fe5f5c06963",
+                    "resultId": "8213cbba-dfe1-4135-a031-fdf5f722f02f",
+                    "rows": [
+                        {
+                            "0": 501,
+                            "1": "Drug_1",
+                            "2": "week_1",
+                            "3": 140
+                        },
+                        {
+                            "0": 501,
+                            "1": "Drug_1",
+                            "2": "week_2",
+                            "3": 135
+                        },
+                        {
+                            "0": 501,
+                            "1": "Drug_1",
+                            "2": "week_3",
+                            "3": 120
+                        },
+                        {
+                            "0": 502,
+                            "1": "Placebo",
+                            "2": "week_1",
+                            "3": 150
+                        },
+                        {
+                            "0": 502,
+                            "1": "Placebo",
+                            "2": "week_2",
+                            "3": 148
+                        },
+                        {
+                            "0": 502,
+                            "1": "Placebo",
+                            "2": "week_3",
+                            "3": 145
+                        },
+                        {
+                            "0": 503,
+                            "1": "Drug_A",
+                            "2": "week_1",
+                            "3": 135
+                        },
+                        {
+                            "0": 503,
+                            "1": "Drug_A",
+                            "2": "week_2",
+                            "3": 130
+                        },
+                        {
+                            "0": 503,
+                            "1": "Drug_A",
+                            "2": "week_3",
+                            "3": 128
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "patient_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "treatment",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "measurement_week",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "blood_pressure",
+                            "field": "3",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 9 records retrieved in 0.931ms"
+                    },
+                    "totalRowCount": 9,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "#order by\n\nSELECT patient_id,treatment,\"week_1\" as measurement_week,week_1_bp as  blood_pressure\nFROM clinical_trail_wide\nUNION ALL\nSELECT patient_id,treatment,\"week_2\" as measurement_week,week_2_bp as blood_pressure \nfrom clinical_trail_wide\nUNION ALL\nSELECT patient_id,treatment,\"week_3\" as measurement_week,week_3_bp as blood_pressure\nFROM clinical_trail_wide\nORDER BY patient_id,measurement_week",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 38,
+                "end": 38,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}
