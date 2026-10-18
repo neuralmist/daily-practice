@@ -1,0 +1,680 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook",
+    "content": "use internship_prep;\ncreate TABLE insurance_claims(\npatient_id int primary key,\nage int,\nclaim_amount INT);\ninsert into insurance_claims (patient_id,age,claim_amount)\nvalues\n(701,25,1500),\n(702,45,45000),\n(703,35,12000),\n(704,60,150000),\n(705,22,800);\nSELECT * FROM insurance_claims;\n# min max\nSELECT patient_id,claim_amount,\n(claim_amount-min(claim_amount) over ())*1.0 /\n(max(claim_amount) over() - min(claim_amount) over ()) as minmax_scaled_\nfrom insurance_claims;\n# standard division\n\nselect patient_id,claim_amount,\n(claim_amount - avg(claim_amount) over()) / STDDEV(claim_amount) over() as standard_scaled\nfrom insurance_claims;\nselect patient_id,age,\n(age-avg(age) over()) / STDDEV(age) over() as scaled_age\nfrom insurance_claims;\n",
+    "options": {},
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": false,
+                "selectionStart": {
+                    "lineNumber": 27,
+                    "column": 1
+                },
+                "position": {
+                    "lineNumber": 27,
+                    "column": 1
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 19,
+                "column": 1
+            },
+            "firstPositionDeltaTop": 35
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": false
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 1,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "e6b2cd2b-02b8-45e4-d138-8cf7dc163156",
+                            "content": "OK, 0 records retrieved in 2.473ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 20
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 2,
+                "end": 5,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "767a8bce-c728-4538-c525-7079cbecb541",
+                            "content": "OK, 0 records retrieved in 16.022ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 86
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 6,
+                "end": 12,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "f633e3c9-353d-4276-f848-51e904199fa7",
+                            "content": "OK, 5 rows affected in 1.965ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 143
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 13,
+                "end": 13,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "a05f48a3-5530-4950-9d75-8633f9b7a296"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 31
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "66e5d3ba-467c-4540-e84a-42aea81d8939",
+                    "resultId": "a05f48a3-5530-4950-9d75-8633f9b7a296",
+                    "rows": [
+                        {
+                            "0": 701,
+                            "1": 25,
+                            "2": 1500
+                        },
+                        {
+                            "0": 702,
+                            "1": 45,
+                            "2": 45000
+                        },
+                        {
+                            "0": 703,
+                            "1": 35,
+                            "2": 12000
+                        },
+                        {
+                            "0": 704,
+                            "1": 60,
+                            "2": 150000
+                        },
+                        {
+                            "0": 705,
+                            "1": 22,
+                            "2": 800
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "patient_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": true,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "age",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        },
+                        {
+                            "title": "claim_amount",
+                            "field": "2",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 5 records retrieved in 0.243ms"
+                    },
+                    "totalRowCount": 5,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT * FROM insurance_claims",
+                    "updatable": true,
+                    "fullTableName": "insurance_claims"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 14,
+                "end": 18,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "12a4f25d-8d54-435a-b4f0-60396560ec9b"
+                    ]
+                },
+                "currentHeight": 173.96875,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 184
+                        },
+                        "contentStart": 10,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "66e5d3ba-467c-4540-e84a-42aea81d8939",
+                    "resultId": "12a4f25d-8d54-435a-b4f0-60396560ec9b",
+                    "rows": [
+                        {
+                            "0": 701,
+                            "1": 1500,
+                            "2": "0.00469"
+                        },
+                        {
+                            "0": 702,
+                            "1": 45000,
+                            "2": "0.29625"
+                        },
+                        {
+                            "0": 703,
+                            "1": 12000,
+                            "2": "0.07507"
+                        },
+                        {
+                            "0": 704,
+                            "1": 150000,
+                            "2": "1.00000"
+                        },
+                        {
+                            "0": 705,
+                            "1": 800,
+                            "2": "0.00000"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "patient_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "claim_amount",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "minmax_scaled_",
+                            "field": "2",
+                            "dataType": {
+                                "type": 10,
+                                "flags": [
+                                    "UNSIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 65,
+                                "numericScale": 30,
+                                "parameterFormatType": "TwoOrOneOrZero",
+                                "synonyms": [
+                                    "FIXED",
+                                    "NUMERIC",
+                                    "DEC"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 5 records retrieved in 1.541ms"
+                    },
+                    "totalRowCount": 5,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "# min max\nSELECT patient_id,claim_amount,\n(claim_amount-min(claim_amount) over ())*1.0 /\n(max(claim_amount) over() - min(claim_amount) over ()) as minmax_scaled_\nfrom insurance_claims",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 19,
+                "end": 23,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "5af680a7-3dcc-4a37-e4b4-5ea55bfb3629"
+                    ]
+                },
+                "currentHeight": 173.96875,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 166
+                        },
+                        "contentStart": 21,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "66e5d3ba-467c-4540-e84a-42aea81d8939",
+                    "resultId": "5af680a7-3dcc-4a37-e4b4-5ea55bfb3629",
+                    "rows": [
+                        {
+                            "0": 701,
+                            "1": 1500,
+                            "2": -0.7154725730617959
+                        },
+                        {
+                            "0": 702,
+                            "1": 45000,
+                            "2": 0.055663624366056465
+                        },
+                        {
+                            "0": 703,
+                            "1": 12000,
+                            "2": -0.529336249544728
+                        },
+                        {
+                            "0": 704,
+                            "1": 150000,
+                            "2": 1.9170268595367346
+                        },
+                        {
+                            "0": 705,
+                            "1": 800,
+                            "2": -0.7278816612962671
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "patient_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "claim_amount",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "standard_scaled",
+                            "field": "2",
+                            "dataType": {
+                                "type": 9,
+                                "flags": [
+                                    "UNSIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 53,
+                                "numericScale": 30,
+                                "parameterFormatType": "TwoOrZero",
+                                "synonyms": [
+                                    "FLOAT8"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 5 records retrieved in 0.536ms"
+                    },
+                    "totalRowCount": 5,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "# standard division\n\nselect patient_id,claim_amount,\n(claim_amount - avg(claim_amount) over()) / STDDEV(claim_amount) over() as standard_scaled\nfrom insurance_claims",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 24,
+                "end": 26,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "bf3f0476-7125-423c-81af-4a3db1c1423e"
+                    ]
+                },
+                "currentHeight": 173.96875,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 102
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "66e5d3ba-467c-4540-e84a-42aea81d8939",
+                    "resultId": "bf3f0476-7125-423c-81af-4a3db1c1423e",
+                    "rows": [
+                        {
+                            "0": 701,
+                            "1": 25,
+                            "2": -0.892479050844112
+                        },
+                        {
+                            "0": 702,
+                            "1": 45,
+                            "2": 0.5470032892270363
+                        },
+                        {
+                            "0": 703,
+                            "1": 35,
+                            "2": -0.1727378808085378
+                        },
+                        {
+                            "0": 704,
+                            "1": 60,
+                            "2": 1.626615044280398
+                        },
+                        {
+                            "0": 705,
+                            "1": 22,
+                            "2": -1.1084014018547843
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "patient_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "age",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "scaled_age",
+                            "field": "2",
+                            "dataType": {
+                                "type": 9,
+                                "flags": [
+                                    "UNSIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 53,
+                                "numericScale": 30,
+                                "parameterFormatType": "TwoOrZero",
+                                "synonyms": [
+                                    "FLOAT8"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 5 records retrieved in 0.451ms"
+                    },
+                    "totalRowCount": 5,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select patient_id,age,\n(age-avg(age) over()) / STDDEV(age) over() as scaled_age\nfrom insurance_claims",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 27,
+                "end": 27,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}
