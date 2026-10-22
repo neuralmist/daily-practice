@@ -1,0 +1,531 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook",
+    "content": "use internship_prep;\ncreate table ehr_notes(\npatient_id int primary key,\ndoctors_note text);\nINSERT into ehr_notes(patient_id,doctors_note) VALUES\n(801,\"Pt admitted for migraine. BP: 140/90.Prescribed meds.\"),\n(802,\"Routine checkup.BP is 110/70 today.No complaints.\"),\n(803,\"Patient has a history of severe asthma.bp 135/85.\"),\n(804,\"Follow-up visit.Vitals normal.\");\nSELECT*from ehr_notes;\n# filter patient who have \"asthma\" anywhere  in their notes\nSELECT*\nFROM ehr_notes\nWHERE doctors_note LIKE \"%asthm%\";\n# select pattern of bp\n\nselect patient_id,\nREGEXP_SUBSTR(doctors_note,'[0-9]{2,3}/[0-9]{2,3}') as extracted_bp\nFROM ehr_notes;\nSELECT* from ehr_notes\nwhere doctors_note like \"%routine%\";\n",
+    "options": {},
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": false,
+                "selectionStart": {
+                    "lineNumber": 15,
+                    "column": 15
+                },
+                "position": {
+                    "lineNumber": 15,
+                    "column": 15
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 11,
+                "column": 1
+            },
+            "firstPositionDeltaTop": 73
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": true
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 1,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "1a275113-19eb-45ca-e370-e314e389c152",
+                            "content": "OK, 0 records retrieved in 1.992ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 20
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 2,
+                "end": 4,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "5e833391-ef65-488e-bc20-6c8760c21926",
+                            "content": "OK, 0 records retrieved in 18.253ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 71
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 5,
+                "end": 9,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "6dc4d05d-a51b-4ee0-8495-333a81141101",
+                            "content": "OK, 4 rows affected in 2.321ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 274
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 10,
+                "end": 10,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "fdf73905-3d98-4646-ae10-bea139c9cb98"
+                    ]
+                },
+                "currentHeight": 151.96875,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 22
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a4706015-4c58-4c66-b15b-17627fab773c",
+                    "resultId": "fdf73905-3d98-4646-ae10-bea139c9cb98",
+                    "rows": [
+                        {
+                            "0": 801,
+                            "1": "Pt admitted for migraine. BP: 140/90.Prescribed meds."
+                        },
+                        {
+                            "0": 802,
+                            "1": "Routine checkup.BP is 110/70 today.No complaints."
+                        },
+                        {
+                            "0": 803,
+                            "1": "Patient has a history of severe asthma.bp 135/85."
+                        },
+                        {
+                            "0": 804,
+                            "1": "Follow-up visit.Vitals normal."
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "patient_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": true,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "doctors_note",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 0.335ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT*from ehr_notes",
+                    "updatable": true,
+                    "fullTableName": "ehr_notes"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 11,
+                "end": 14,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "52a9b174-fc5a-4a40-dfd3-9379f70447cf"
+                    ]
+                },
+                "currentHeight": 85.96875,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 117
+                        },
+                        "contentStart": 60,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a4706015-4c58-4c66-b15b-17627fab773c",
+                    "resultId": "52a9b174-fc5a-4a40-dfd3-9379f70447cf",
+                    "rows": [
+                        {
+                            "0": 803,
+                            "1": "Patient has a history of severe asthma.bp 135/85."
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "patient_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": true,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "doctors_note",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 0.334ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "# filter patient who have \"asthma\" anywhere  in their notes\nSELECT*\nFROM ehr_notes\nWHERE doctors_note LIKE \"%asthm%\"",
+                    "updatable": true,
+                    "fullTableName": "ehr_notes"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 15,
+                "end": 19,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "d292bd48-f823-45e2-f726-67b6a383f4df"
+                    ]
+                },
+                "currentHeight": 154.796875,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 126
+                        },
+                        "contentStart": 24,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a4706015-4c58-4c66-b15b-17627fab773c",
+                    "resultId": "d292bd48-f823-45e2-f726-67b6a383f4df",
+                    "rows": [
+                        {
+                            "0": 801,
+                            "1": "140/90"
+                        },
+                        {
+                            "0": 802,
+                            "1": "110/70"
+                        },
+                        {
+                            "0": 803,
+                            "1": "135/85"
+                        },
+                        {
+                            "0": 804,
+                            "1": null
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "patient_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "extracted_bp",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 9.471ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "# select pattern of bp\n\nselect patient_id,\nREGEXP_SUBSTR(doctors_note,'[0-9]{2,3}/[0-9]{2,3}') as extracted_bp\nFROM ehr_notes",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 20,
+                "end": 21,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "e5d50ca7-f1d8-4fb8-f401-8b4a9c4701b2"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 59
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "a4706015-4c58-4c66-b15b-17627fab773c",
+                    "resultId": "e5d50ca7-f1d8-4fb8-f401-8b4a9c4701b2",
+                    "rows": [
+                        {
+                            "0": 802,
+                            "1": "Routine checkup.BP is 110/70 today.No complaints."
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "patient_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": true,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "doctors_note",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 1 record retrieved in 0.257ms"
+                    },
+                    "totalRowCount": 1,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT* from ehr_notes\nwhere doctors_note like \"%routine%\"",
+                    "updatable": true,
+                    "fullTableName": "ehr_notes"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 22,
+                "end": 22,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}
