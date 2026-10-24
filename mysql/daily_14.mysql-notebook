@@ -1,0 +1,1127 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook",
+    "content": "use internship_prep;\ncreate table patient_demographics(\npatient_id int primary key,\npatient_name VARCHAR(50));\ninsert into patient_demographics(patient_id,patient_name) VALUES\n(902,\"Annie\"),\n(903,\"Justin\"),\n(904,\"Chase\"),\n(905,\"Rose\");\nselect * from patient_demographics;\ncreate table lab_results(\npatient_id int,\ncholesterol int);\ninsert into lab_results(patient_id,cholesterol) values \n(901,180),(902,220),(903,195),(905,240);\nselect * from lab_results;\n# inner join \nselect d.patient_id,d.patient_name,l.cholesterol\nfrom patient_demographics d \ninner join lab_results l  \non d.patient_id = l.patient_id\n#left join\nselect d.patient_id,d.patient_name,l.cholesterol\nfrom patient_demographics d \nleft join lab_results l  \non d.patient_id = l.patient_id;\n# replacing null value  \nselect d.patient_id,d.patient_name,\nIFNULL(l.cholesterol,\"yet to be entered..\") \nfrom patient_demographics d \nleft join lab_results l \non d.patient_id = l.patient_id\n# right join\n\nselect d.patient_id,d.patient_name,l.cholesterol\nfrom patient_demographics d \nright join lab_results l on d.patient_id=l.patient_id;\n# full join\n#select d.patient_id,d.patient_name,l.cholesterol\n#from patient_demographics d \n#full join lab_results l on d.patient_id=l.patient_id;\n\n# cross join  # not always recommeneded, 4x4\nSELECT d.patient_id,d.patient_name,l.cholesterol\nfrom patient_demographics d \ncross join lab_results l;\n",
+    "options": {},
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": false,
+                "selectionStart": {
+                    "lineNumber": 43,
+                    "column": 45
+                },
+                "position": {
+                    "lineNumber": 43,
+                    "column": 45
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 40,
+                "column": 1
+            },
+            "firstPositionDeltaTop": -19
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": false
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 1,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "bfcfb827-1886-4d60-b3d0-3c6fad51f801",
+                            "content": "OK, 0 records retrieved in 1.156ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 20
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 2,
+                "end": 4,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "044e6afa-3a6c-46f6-f64b-922106834a94",
+                            "content": "OK, 0 records retrieved in 11.948ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 89
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 5,
+                "end": 9,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "4a597f6e-dbc1-4d59-9257-9fa17bbbba00",
+                            "content": "OK, 4 rows affected in 3.049ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 124
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 10,
+                "end": 10,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "711098d9-ea12-435e-841d-629a49757af9"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 35
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ff9ea974-009a-4f77-ca94-9804101fcdf2",
+                    "resultId": "711098d9-ea12-435e-841d-629a49757af9",
+                    "rows": [
+                        {
+                            "0": 902,
+                            "1": "Annie"
+                        },
+                        {
+                            "0": 903,
+                            "1": "Justin"
+                        },
+                        {
+                            "0": 904,
+                            "1": "Chase"
+                        },
+                        {
+                            "0": 905,
+                            "1": "Rose"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "patient_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": true,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "patient_name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 0.236ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from patient_demographics",
+                    "updatable": true,
+                    "fullTableName": "patient_demographics"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 11,
+                "end": 13,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "048ddaf2-2aa8-4957-e99a-e8b75951b4c0",
+                            "content": "OK, 0 records retrieved in 3.617ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 59
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 14,
+                "end": 15,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "9636387c-d413-49ca-9ecc-124a9d5c19a6",
+                            "content": "OK, 4 rows affected in 0.828ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 96
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 16,
+                "end": 16,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "bba17df1-704a-48be-e39c-5401431ca2ed"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 26
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ff9ea974-009a-4f77-ca94-9804101fcdf2",
+                    "resultId": "bba17df1-704a-48be-e39c-5401431ca2ed",
+                    "rows": [
+                        {
+                            "0": 901,
+                            "1": 180
+                        },
+                        {
+                            "0": 902,
+                            "1": 220
+                        },
+                        {
+                            "0": 903,
+                            "1": 195
+                        },
+                        {
+                            "0": 905,
+                            "1": 240
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "patient_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "cholesterol",
+                            "field": "1",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 0.195ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select * from lab_results",
+                    "updatable": false,
+                    "fullTableName": "lab_results"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 17,
+                "end": 21,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "b2915910-6b3d-4e37-86d5-b8df7772e4b2"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 149
+                        },
+                        "contentStart": 14,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ff9ea974-009a-4f77-ca94-9804101fcdf2",
+                    "resultId": "b2915910-6b3d-4e37-86d5-b8df7772e4b2",
+                    "rows": [
+                        {
+                            "0": 902,
+                            "1": "Annie",
+                            "2": 220
+                        },
+                        {
+                            "0": 903,
+                            "1": "Justin",
+                            "2": 195
+                        },
+                        {
+                            "0": 905,
+                            "1": "Rose",
+                            "2": 240
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "patient_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "patient_name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "cholesterol",
+                            "field": "2",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 3 records retrieved in 0.368ms"
+                    },
+                    "totalRowCount": 3,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "# inner join \nselect d.patient_id,d.patient_name,l.cholesterol\nfrom patient_demographics d \ninner join lab_results l  \non d.patient_id = l.patient_id",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 22,
+                "end": 26,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "de1b4cef-ef8d-4594-da51-4194b028d3ac"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 146
+                        },
+                        "contentStart": 11,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ff9ea974-009a-4f77-ca94-9804101fcdf2",
+                    "resultId": "de1b4cef-ef8d-4594-da51-4194b028d3ac",
+                    "rows": [
+                        {
+                            "0": 902,
+                            "1": "Annie",
+                            "2": 220
+                        },
+                        {
+                            "0": 903,
+                            "1": "Justin",
+                            "2": 195
+                        },
+                        {
+                            "0": 904,
+                            "1": "Chase",
+                            "2": null
+                        },
+                        {
+                            "0": 905,
+                            "1": "Rose",
+                            "2": 240
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "patient_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "patient_name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "cholesterol",
+                            "field": "2",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 0.369ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "#left join\nselect d.patient_id,d.patient_name,l.cholesterol\nfrom patient_demographics d \nleft join lab_results l  \non d.patient_id = l.patient_id",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 27,
+                "end": 32,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "536f807b-d905-4e51-82eb-433c3dee1b47"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 190
+                        },
+                        "contentStart": 25,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ff9ea974-009a-4f77-ca94-9804101fcdf2",
+                    "resultId": "536f807b-d905-4e51-82eb-433c3dee1b47",
+                    "rows": [
+                        {
+                            "0": 902,
+                            "1": "Annie",
+                            "2": "220"
+                        },
+                        {
+                            "0": 903,
+                            "1": "Justin",
+                            "2": "195"
+                        },
+                        {
+                            "0": 904,
+                            "1": "Chase",
+                            "2": "yet to be entered.."
+                        },
+                        {
+                            "0": 905,
+                            "1": "Rose",
+                            "2": "240"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "patient_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "patient_name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "IFNULL(l.cholesterol,\"yet to be entered..\")",
+                            "field": "2",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 0.387ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "# replacing null value  \nselect d.patient_id,d.patient_name,\nIFNULL(l.cholesterol,\"yet to be entered..\") \nfrom patient_demographics d \nleft join lab_results l \non d.patient_id = l.patient_id",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 33,
+                "end": 37,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "31a478bc-4030-4131-c2a3-ea2d04c6e71e"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 146
+                        },
+                        "contentStart": 14,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ff9ea974-009a-4f77-ca94-9804101fcdf2",
+                    "resultId": "31a478bc-4030-4131-c2a3-ea2d04c6e71e",
+                    "rows": [
+                        {
+                            "0": null,
+                            "1": null,
+                            "2": 180
+                        },
+                        {
+                            "0": 902,
+                            "1": "Annie",
+                            "2": 220
+                        },
+                        {
+                            "0": 903,
+                            "1": "Justin",
+                            "2": 195
+                        },
+                        {
+                            "0": 905,
+                            "1": "Rose",
+                            "2": 240
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "patient_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "patient_name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "cholesterol",
+                            "field": "2",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 0.37ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "# right join\n\nselect d.patient_id,d.patient_name,l.cholesterol\nfrom patient_demographics d \nright join lab_results l on d.patient_id=l.patient_id",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 38,
+                "end": 42,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 0,
+                            "index": 0,
+                            "content": "MySQL Error (1064): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'full join lab_results l on d.patient_id=l.patient_id' at line 4",
+                            "language": "ansi"
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": ""
+                    }
+                },
+                "currentHeight": 71.328125,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 147
+                        },
+                        "contentStart": -1,
+                        "state": 3
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 43,
+                "end": 46,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "e539f0f1-83f0-406f-e1af-98842bac7064"
+                    ]
+                },
+                "currentHeight": 351.984375,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 148
+                        },
+                        "contentStart": 45,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "ff9ea974-009a-4f77-ca94-9804101fcdf2",
+                    "resultId": "e539f0f1-83f0-406f-e1af-98842bac7064",
+                    "rows": [
+                        {
+                            "0": 905,
+                            "1": "Rose",
+                            "2": 180
+                        },
+                        {
+                            "0": 904,
+                            "1": "Chase",
+                            "2": 180
+                        },
+                        {
+                            "0": 903,
+                            "1": "Justin",
+                            "2": 180
+                        },
+                        {
+                            "0": 902,
+                            "1": "Annie",
+                            "2": 180
+                        },
+                        {
+                            "0": 905,
+                            "1": "Rose",
+                            "2": 220
+                        },
+                        {
+                            "0": 904,
+                            "1": "Chase",
+                            "2": 220
+                        },
+                        {
+                            "0": 903,
+                            "1": "Justin",
+                            "2": 220
+                        },
+                        {
+                            "0": 902,
+                            "1": "Annie",
+                            "2": 220
+                        },
+                        {
+                            "0": 905,
+                            "1": "Rose",
+                            "2": 195
+                        },
+                        {
+                            "0": 904,
+                            "1": "Chase",
+                            "2": 195
+                        },
+                        {
+                            "0": 903,
+                            "1": "Justin",
+                            "2": 195
+                        },
+                        {
+                            "0": 902,
+                            "1": "Annie",
+                            "2": 195
+                        },
+                        {
+                            "0": 905,
+                            "1": "Rose",
+                            "2": 240
+                        },
+                        {
+                            "0": 904,
+                            "1": "Chase",
+                            "2": 240
+                        },
+                        {
+                            "0": 903,
+                            "1": "Justin",
+                            "2": 240
+                        },
+                        {
+                            "0": 902,
+                            "1": "Annie",
+                            "2": 240
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "patient_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "patient_name",
+                            "field": "1",
+                            "dataType": {
+                                "type": 17,
+                                "characterMaximumLength": 65535,
+                                "flags": [
+                                    "BINARY",
+                                    "ASCII",
+                                    "UNICODE"
+                                ],
+                                "needsQuotes": true,
+                                "parameterFormatType": "OneOrZero"
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "cholesterol",
+                            "field": "2",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 16 records retrieved in 0.342ms"
+                    },
+                    "totalRowCount": 16,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "# cross join\nSELECT d.patient_id,d.patient_name,l.cholesterol\nfrom patient_demographics d \ncross join lab_results l",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 47,
+                "end": 47,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}
