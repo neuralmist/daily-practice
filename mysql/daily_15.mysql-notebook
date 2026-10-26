@@ -1,0 +1,625 @@
+{
+    "type": "MySQLNotebook",
+    "version": "1.0",
+    "caption": "DB Notebook",
+    "content": "use internship_prep;\n\nCREATE table hospital_admission(\npatient_id int primary KEY,\nadmit_date date,\ndischarge_date date);\ninsert into hospital_admission(patient_id,admit_date,discharge_date) VALUES\n(1001,\"2026-10-01\",\"2026-10-05\"),\n(1002,\"2026-10-05\",\"2026-10-12\"),\n(1003,\"2026-10-15\",\"2026-10-16\"),\n(1004,\"2026-10-20\",\"2026-10-30\");\nSELECT * from hospital_admission;\nselect patient_id,\nadmit_date,\ndischarge_date,\nDATEDIFF(discharge_date,admit_date) as length_of_stay\nfrom hospital_admission;\nSELECT patient_id,\nadmit_date,\ndischarge_date,\nDATE_ADD(discharge_date,interval 14 day) as follow_up_date\nFROM hospital_admission;\n# blood test date - 2 days after admit\nselect patient_id,\nadmit_date,\ndate_add(admit_date,interval 2 day) as blood_test_date\nfrom hospital_admission;\n",
+    "options": {},
+    "viewState": {
+        "cursorState": [
+            {
+                "inSelectionMode": false,
+                "selectionStart": {
+                    "lineNumber": 28,
+                    "column": 1
+                },
+                "position": {
+                    "lineNumber": 28,
+                    "column": 1
+                }
+            }
+        ],
+        "viewState": {
+            "scrollLeft": 0,
+            "firstPosition": {
+                "lineNumber": 16,
+                "column": 1
+            },
+            "firstPositionDeltaTop": -3
+        },
+        "contributionsState": {
+            "editor.contrib.folding": {},
+            "editor.contrib.wordHighlighter": false
+        }
+    },
+    "contexts": [
+        {
+            "state": {
+                "start": 1,
+                "end": 1,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "67a87431-95ad-456d-e785-01323f062ae4",
+                            "content": "OK, 0 records retrieved in 0.517ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 20
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 2,
+                "end": 6,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "da8942a7-778f-4290-91d6-760f3b056210",
+                            "content": "OK, 0 records retrieved in 18.298ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 100
+                        },
+                        "contentStart": 1,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 7,
+                "end": 11,
+                "language": "mysql",
+                "result": {
+                    "type": "text",
+                    "text": [
+                        {
+                            "type": 2,
+                            "index": 0,
+                            "resultId": "49590c04-1fd3-4aaa-cb6e-7a598ef9973f",
+                            "content": "OK, 4 rows affected in 7.174ms"
+                        }
+                    ]
+                },
+                "currentHeight": 28,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 211
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        },
+        {
+            "state": {
+                "start": 12,
+                "end": 12,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "0436a533-9104-438a-fcf8-26d0caaca3f3"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 33
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "bdc0c5de-e60c-4514-88cc-b8aac303c380",
+                    "resultId": "0436a533-9104-438a-fcf8-26d0caaca3f3",
+                    "rows": [
+                        {
+                            "0": 1001,
+                            "1": "2026-10-01",
+                            "2": "2026-10-05"
+                        },
+                        {
+                            "0": 1002,
+                            "1": "2026-10-05",
+                            "2": "2026-10-12"
+                        },
+                        {
+                            "0": 1003,
+                            "1": "2026-10-15",
+                            "2": "2026-10-16"
+                        },
+                        {
+                            "0": 1004,
+                            "1": "2026-10-20",
+                            "2": "2026-10-30"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "patient_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": true,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "admit_date",
+                            "field": "1",
+                            "dataType": {
+                                "type": 27,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        },
+                        {
+                            "title": "discharge_date",
+                            "field": "2",
+                            "dataType": {
+                                "type": 27,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": true,
+                            "autoIncrement": false,
+                            "default": null
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 0.369ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT * from hospital_admission",
+                    "updatable": true,
+                    "fullTableName": "hospital_admission"
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 13,
+                "end": 17,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "609b0587-de1c-4b67-bc0c-ea589f8d7a79"
+                    ]
+                },
+                "currentHeight": 151.96875,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 125
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "bdc0c5de-e60c-4514-88cc-b8aac303c380",
+                    "resultId": "609b0587-de1c-4b67-bc0c-ea589f8d7a79",
+                    "rows": [
+                        {
+                            "0": 1001,
+                            "1": "2026-10-01",
+                            "2": "2026-10-05",
+                            "3": 4
+                        },
+                        {
+                            "0": 1002,
+                            "1": "2026-10-05",
+                            "2": "2026-10-12",
+                            "3": 7
+                        },
+                        {
+                            "0": 1003,
+                            "1": "2026-10-15",
+                            "2": "2026-10-16",
+                            "3": 1
+                        },
+                        {
+                            "0": 1004,
+                            "1": "2026-10-20",
+                            "2": "2026-10-30",
+                            "3": 10
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "patient_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "admit_date",
+                            "field": "1",
+                            "dataType": {
+                                "type": 27,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "discharge_date",
+                            "field": "2",
+                            "dataType": {
+                                "type": 27,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "length_of_stay",
+                            "field": "3",
+                            "dataType": {
+                                "type": 3,
+                                "flags": [
+                                    "UNSIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 8,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INT3",
+                                    "MIDDLEINT"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 1.465ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "select patient_id,\nadmit_date,\ndischarge_date,\nDATEDIFF(discharge_date,admit_date) as length_of_stay\nfrom hospital_admission",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 18,
+                "end": 22,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "f88e1f67-6d8d-4b60-c0d9-a602e34a07e6"
+                    ]
+                },
+                "currentHeight": 151.96875,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 130
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "bdc0c5de-e60c-4514-88cc-b8aac303c380",
+                    "resultId": "f88e1f67-6d8d-4b60-c0d9-a602e34a07e6",
+                    "rows": [
+                        {
+                            "0": 1001,
+                            "1": "2026-10-01",
+                            "2": "2026-10-05",
+                            "3": "2026-10-19"
+                        },
+                        {
+                            "0": 1002,
+                            "1": "2026-10-05",
+                            "2": "2026-10-12",
+                            "3": "2026-10-26"
+                        },
+                        {
+                            "0": 1003,
+                            "1": "2026-10-15",
+                            "2": "2026-10-16",
+                            "3": "2026-10-30"
+                        },
+                        {
+                            "0": 1004,
+                            "1": "2026-10-20",
+                            "2": "2026-10-30",
+                            "3": "2026-11-13"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "patient_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "admit_date",
+                            "field": "1",
+                            "dataType": {
+                                "type": 27,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "discharge_date",
+                            "field": "2",
+                            "dataType": {
+                                "type": 27,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "follow_up_date",
+                            "field": "3",
+                            "dataType": {
+                                "type": 27,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 0.901ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "SELECT patient_id,\nadmit_date,\ndischarge_date,\nDATE_ADD(discharge_date,interval 14 day) as follow_up_date\nFROM hospital_admission",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 23,
+                "end": 27,
+                "language": "mysql",
+                "result": {
+                    "type": "resultIds",
+                    "list": [
+                        "34cb894f-9984-408c-e7ce-140275fec2b6"
+                    ]
+                },
+                "currentHeight": 36,
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 149
+                        },
+                        "contentStart": 39,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": [
+                {
+                    "tabId": "bdc0c5de-e60c-4514-88cc-b8aac303c380",
+                    "resultId": "34cb894f-9984-408c-e7ce-140275fec2b6",
+                    "rows": [
+                        {
+                            "0": 1001,
+                            "1": "2026-10-01",
+                            "2": "2026-10-03"
+                        },
+                        {
+                            "0": 1002,
+                            "1": "2026-10-05",
+                            "2": "2026-10-07"
+                        },
+                        {
+                            "0": 1003,
+                            "1": "2026-10-15",
+                            "2": "2026-10-17"
+                        },
+                        {
+                            "0": 1004,
+                            "1": "2026-10-20",
+                            "2": "2026-10-22"
+                        }
+                    ],
+                    "columns": [
+                        {
+                            "title": "patient_id",
+                            "field": "0",
+                            "dataType": {
+                                "type": 4,
+                                "flags": [
+                                    "SIGNED",
+                                    "ZEROFILL"
+                                ],
+                                "numericPrecision": 10,
+                                "parameterFormatType": "OneOrZero",
+                                "synonyms": [
+                                    "INTEGER",
+                                    "INT4"
+                                ]
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "admit_date",
+                            "field": "1",
+                            "dataType": {
+                                "type": 27,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        },
+                        {
+                            "title": "blood_test_date",
+                            "field": "2",
+                            "dataType": {
+                                "type": 27,
+                                "needsQuotes": true
+                            },
+                            "inPK": false,
+                            "nullable": false,
+                            "autoIncrement": false
+                        }
+                    ],
+                    "executionInfo": {
+                        "text": "OK, 4 records retrieved in 0.595ms"
+                    },
+                    "totalRowCount": 4,
+                    "hasMoreRows": false,
+                    "currentPage": 0,
+                    "index": 0,
+                    "sql": "# blood test date - 2 days after admit\nselect patient_id,\nadmit_date,\ndate_add(admit_date,interval 2 day) as blood_test_date\nfrom hospital_admission",
+                    "updatable": false,
+                    "fullTableName": ""
+                }
+            ]
+        },
+        {
+            "state": {
+                "start": 28,
+                "end": 28,
+                "language": "mysql",
+                "currentSet": 1,
+                "statements": [
+                    {
+                        "delimiter": ";",
+                        "span": {
+                            "start": 0,
+                            "length": 0
+                        },
+                        "contentStart": 0,
+                        "state": 0
+                    }
+                ]
+            },
+            "data": []
+        }
+    ]
+}
